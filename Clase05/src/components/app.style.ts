@@ -7,10 +7,6 @@ export const appStyles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "white"
-  },
-
-  row: {
-    flexDirection: "row"
   }
 
 });
