@@ -1,26 +1,18 @@
-import { Pressable, Text } from "react-native";
-import { stylesCountScreen } from "./CountScreen.style";
+import React from "react";
+import { Text, TouchableOpacity } from "react-native";
+import { stylesCountScreen } from "./CountScreen.styles";
 
-type CountScreenProps = {
-    label: String;
-    OnPress: () => void;
-}
-
-
-export const CountScreen: React.FC<CountScreenProps> = (
-    {label, OnPress}
-) => {
-    return(
-        <Pressable style={stylesCountScreen.button} onPress={OnPress}>
-            <Text style={stylesCountScreen.labelText} >
-                {
-                    label
-                }
-
-            </Text>
-        </Pressable>
-
-    )
+type Props = {
+  label: string;
+  OnPress: () => void;
 };
 
-export default CountScreen
+export const CountScreen = ({ label, OnPress }: Props) => {
+  return (
+    <TouchableOpacity style={stylesCountScreen.button} onPress={OnPress}>
+      <Text style={stylesCountScreen.labelText}>
+        {label}
+      </Text>
+    </TouchableOpacity>
+  );
+};
